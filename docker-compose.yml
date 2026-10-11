@@ -1,0 +1,53 @@
+services:
+  frontend:
+    build: ./frontend
+    init: true
+    ports:
+      - "127.0.0.1:5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+  backend:
+    build: ./backend
+    init: true
+    stop_grace_period: 60s
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_NAME: ${APP_NAME:-PPA-Sense}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      LLM_PROVIDER: ${LLM_PROVIDER:-anthropic}
+      LLM_MODEL: ${LLM_MODEL:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-2000}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-60}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-sentence-transformers/all-MiniLM-L6-v2}
+      EMBEDDING_REVISION: ${EMBEDDING_REVISION:-}
+      EMBEDDING_BATCH_SIZE: ${EMBEDDING_BATCH_SIZE:-32}
+      CHROMA_PATH: /service/data/chroma
+      CHROMA_COLLECTION: ${CHROMA_COLLECTION:-contract_chunks}
+      HF_HOME: /service/models
+      DOCUMENTS_PATH: /service/data/documents
+      MAX_UPLOAD_BYTES: ${MAX_UPLOAD_BYTES:-52428800}
+      CORS_ORIGINS: '${CORS_ORIGINS:-["http://localhost:5173","http://127.0.0.1:5173"]}'
+    volumes:
+      - chroma_data:/service/data/chroma
+      - embedding_models:/service/models
+      - document_data:/service/data/documents
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=2)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  chroma_data:
+  embedding_models:
+  document_data:

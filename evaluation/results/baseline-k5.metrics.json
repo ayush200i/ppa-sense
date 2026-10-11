@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Retrieval page hit@5",
+    "correct": 13,
+    "total": 14,
+    "note": "Answerable questions only; any gold page in top-k chunks",
+    "result": "92.9% (13/14)"
+  },
+  {
+    "name": "Citation accuracy (page + quote)",
+    "correct": 0,
+    "total": 0,
+    "note": "Mechanical proxy, not semantic support",
+    "result": "N/A"
+  },
+  {
+    "name": "Citation quote validity",
+    "correct": 0,
+    "total": 0,
+    "note": "Correct document and verbatim page text",
+    "result": "N/A"
+  },
+  {
+    "name": "Citation coverage",
+    "correct": 0,
+    "total": 0,
+    "note": "Answerable questions with at least one citation",
+    "result": "N/A"
+  },
+  {
+    "name": "Abstention accuracy",
+    "correct": 0,
+    "total": 0,
+    "note": "Unanswerable questions only",
+    "result": "N/A"
+  },
+  {
+    "name": "Citation semantic accuracy",
+    "correct": 0,
+    "total": 0,
+    "note": "Reviewed subset; see review coverage",
+    "result": "N/A"
+  },
+  {
+    "name": "Citation review coverage",
+    "correct": 0,
+    "total": 0,
+    "note": "",
+    "result": "N/A"
+  },
+  {
+    "name": "Answer accuracy (human review)",
+    "correct": 0,
+    "total": 0,
+    "note": "Reviewed subset only",
+    "result": "N/A"
+  },
+  {
+    "name": "Answer review coverage",
+    "correct": 0,
+    "total": 0,
+    "note": "",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: contract_type",
+    "correct": 0,
+    "total": 0,
+    "note": "exact; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: parties",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: effective_date",
+    "correct": 0,
+    "total": 0,
+    "note": "exact; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: term_years",
+    "correct": 0,
+    "total": 0,
+    "note": "exact; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: COD",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: price_tariff",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: escalation",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: delivery_point",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: guaranteed_output",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: termination_rights",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: liquidated_damages",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: change_in_law",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: force_majeure",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  },
+  {
+    "name": "Field: payment_terms",
+    "correct": 0,
+    "total": 0,
+    "note": "manual; one document; generation not run",
+    "result": "N/A"
+  }
+]

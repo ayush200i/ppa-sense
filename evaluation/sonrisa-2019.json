@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "title": "2019 Sonrisa Solar Park PPA: EDPR CA Solar Park VI LLC / East Bay Community Energy Authority",
+  "source_url": "https://avaenergy.org/wp-content/uploads/2025/07/15.-Item-15-EDPR-Sonrisa-and-Scarlett-IIIv2.pdf",
+  "source_sha256": "501076d7bcf06a6c646939ec7c6b1514c4b586d0c64e6d0ce4177a36c0047091",
+  "source_page_count": 139,
+  "page_start": 9,
+  "page_end": 131,
+  "annotation_status": "Assistant source-checked development labels; independent human review pending.",
+  "notes": [
+    "Attachment 15C is the real, publicly disclosed 2019 execution-version PPA, spanning 123 pages including exhibits. The source is a 139-page July 2025 board packet.",
+    "Index only original PDF pages 9-131. Do not use the 2025 staff report or slides to fill redacted 2019 contract terms. This is not an evaluation of a newly negotiated 2025 agreement.",
+    "All page numbers are 1-based physical pages in the unmodified downloaded file. Cover sheet page 1 is PDF page 9; body page 1 is PDF page 16; payment page 38 is PDF page 53.",
+    "Some redacted pages were flattened into images. PDF page 53 contains readable payment text visually but only a filing header in PyMuPDF extraction. This challenge is retained, not removed to improve scores.",
+    "Q15 is unanswerable from the public copy because the numerical tariff is redacted. Its page points to the redaction, not an answer; exclude Q15 from retrieval hit-rate denominators.",
+    "This hand-selected single-document set is for development. Do not claim held-out or production accuracy. Exact field checks cover contract type, effective date and delivery-term years; all other fields require semantic review.",
+    "Public source PDF is downloaded into ignored data/, not redistributed with the evaluation set. Reference answers are paraphrases. Redacted content is never reconstructed."
+  ],
+  "questions": [
+    {"id":"Q01","question":"Who are the buyer and seller in this power purchase agreement?","answer":"Buyer: East Bay Community Energy Authority. Seller: EDPR CA Solar Park VI LLC.","pages":[9],"section":"Cover sheet"},
+    {"id":"Q02","question":"What is the effective date of this agreement?","answer":"June 21, 2019.","pages":[16],"section":"Preamble"},
+    {"id":"Q03","question":"How many contract years does the delivery term last?","answer":"20 contract years.","pages":[9],"section":"Cover sheet: Delivery Term"},
+    {"id":"Q04","question":"What event starts the delivery term?","answer":"Commercial operation starts it, subject to early termination.","pages":[22],"section":"Article 1: Delivery Term"},
+    {"id":"Q05","question":"What are the contracted battery storage power, discharge duration and energy output?","answer":"30 MW, four hours, 120 MWh.","pages":[10],"section":"Cover sheet: storage specifications"},
+    {"id":"Q06","question":"After notice of compliance costs above the cap following a change in law, how long does the buyer have to decide, and what choices does it have?","answer":"60 days: reimburse agreed excess costs or waive the corresponding compliance actions.","pages":[43],"section":"3.12 Compliance Expenditure Cap"},
+    {"id":"Q07","question":"When must the buyer reimburse accepted compliance costs after receiving the seller's invoice and supporting documents?","answer":"Within 60 days of receiving both.","pages":[43],"section":"3.12 Compliance Expenditure Cap"},
+    {"id":"Q08","question":"What happens if the seller fails the guaranteed energy production requirement after contractual excuses and deemed deliveries are taken into account?","answer":"The seller owes damages determined under Exhibit G.","pages":[49],"section":"4.7 Guaranteed Energy Production"},
+    {"id":"Q09","question":"Does making the contract unprofitable qualify as force majeure?","answer":"No; unfavorable economics are excluded.","pages":[57],"section":"10.1(c) Force Majeure exclusions"},
+    {"id":"Q10","question":"Does a continuing force majeure event excuse payments already due?","answer":"No; payment obligations continue.","pages":[58],"section":"10.2 Force Majeure"},
+    {"id":"Q11","question":"After how long can the non-claiming party terminate for force majeure, and what additional time can the seller receive after commercial operation?","answer":"After 12 consecutive months of relief; the seller may obtain six more months subject to the specified diligence, restoration-plan and evidence conditions.","pages":[58],"section":"10.4 Termination Following Force Majeure Event"},
+    {"id":"Q12","question":"Following a continuing event of default, what date range may the non-defaulting party choose in its early termination notice?","answer":"From receipt of notice through 20 days thereafter.","pages":[61],"section":"11.2(a) Early Termination Date"},
+    {"id":"Q13","question":"Under the general assignment rule, is the other party's consent needed and may that consent be unreasonably withheld?","answer":"Prior written consent is required and cannot be unreasonably withheld; separate exceptions apply.","pages":[67],"section":"14.1 General Prohibition on Assignments"},
+    {"id":"Q14","question":"When must the buyer pay undisputed monthly invoices, and what happens if the due date falls on a weekend or legal holiday?","answer":"30 days after invoice receipt or billing-month end, whichever is later; a weekend or holiday moves payment to the next business day.","pages":[53],"section":"8.2 Payment","text_available":false,"notes":"Visually verified on the PDF image. PyMuPDF does not extract this clause; do not insert gold text into the retrieval index."},
+    {"id":"Q15","question":"What is the exact numerical renewable energy tariff per MWh in this public contract?","answer":"Not found in the public contract: the numerical rate is redacted.","pages":[83],"section":"Exhibit C: Compensation","answerable":false,"text_available":false,"notes":"Visually verified black redaction. Do not infer a rate from the 2025 board report or other contracts."}
+  ],
+  "fields": {
+    "contract_type":{"mode":"exact","expected":"PPA","pages":[9,16],"rubric":"Power purchase agreement, not EPC."},
+    "parties":{"mode":"manual","pages":[9],"rubric":"Identify EDPR CA Solar Park VI LLC as seller and East Bay Community Energy Authority as buyer. Do not substitute a party from the 2025 staff report."},
+    "effective_date":{"mode":"exact","expected":"2019-06-21","pages":[16],"rubric":"Use the 2019 preamble date, not the 2025 filing or meeting date."},
+    "term_years":{"mode":"exact","expected":20,"pages":[9,22,38],"rubric":"20 is the delivery term from COD; total time from the Effective Date also includes development."},
+    "COD":{"mode":"manual","pages":[9,26],"rubric":"No specific scheduled or actual date is disclosed on the cover sheet. A partial value may explain that guaranteed COD equals expected COD as extended by the development cure period. Reject invented dates, including the 2025 report's proposed date."},
+    "price_tariff":{"mode":"manual","pages":[83,84],"rubric":"Numerical renewable and storage rates are redacted. Accept explicit abstention or a qualified partial description with amount null. Do not accept an invented price or confuse a damage amount with the energy rate. Page 83 requires visual/OCR reading."},
+    "escalation":{"mode":"manual","pages":[83,84],"rubric":"No general escalation percentage is disclosed. Accept abstention or a narrowly qualified description of the visible tax-credit non-adjustment provision; reject an invented percentage or a blanket claim that all price adjustments are prohibited."},
+    "delivery_point":{"mode":"manual","pages":[22,78],"rubric":"Article 1 refers to Exhibit A; the specific delivery point in Exhibit A is redacted. Accept abstention or that qualified statement. Do not equate the project's county with the delivery point."},
+    "guaranteed_output":{"mode":"manual","pages":[10,26,48,49],"rubric":"Distinguish 100 MW guaranteed generating capacity from energy production in MWh and the 30 MW/120 MWh storage contract. Energy-production percentage and storage-availability threshold are redacted. Preserve stated excuses and deemed/lost output if describing the production obligation. Do not invent annual GWh or guarantee percentages."},
+    "termination_rights":{"mode":"manual","pages":[58,61],"rubric":"Describe continuing-default termination by notice (receipt through 20 days), and force-majeure termination after 12 months of relief, with the conditional six-month seller extension after COD. A complete pass requires both and no contradictory timing."},
+    "liquidated_damages":{"mode":"manual","pages":[21,61,62],"rubric":"Distinguish the Damage Payment for seller default before COD (subject to 11.7) from the Termination Payment for other defaults under 11.3. Damage Payment equals development security; numerical amounts are redacted. Do not invent daily damages or caps."},
+    "change_in_law":{"mode":"manual","pages":[43],"rubric":"Explain the compliance expenditure cap (amount redacted), notice of excess costs, buyer's 60-day choice to reimburse agreed excess costs or waive relevant actions, and reimbursement within 60 days of invoice plus documentation. Do not say all changes automatically increase tariff."},
+    "force_majeure":{"mode":"manual","pages":[57,58],"rubric":"Preserve reasonable-efforts, control, fault/negligence conditions, the exclusion for unfavorable economics, and continuation of payments. A list of disasters alone is insufficient."},
+    "payment_terms":{"mode":"manual","pages":[53],"rubric":"Undisputed invoices: wire or ACH within 30 days after invoice receipt or prior billing-period end, whichever is later; next business day for weekend/legal holiday. Late payments incur interest, but the numerical rate is redacted. Null is a miss: the clause is visible in the PDF despite missing extracted text."}
+  }
+}

@@ -1,0 +1,27 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	classify_contract_type(classify_contract_type)
+	plan_fields(plan_fields)
+	retrieve_for_each_field(retrieve_for_each_field)
+	extract_field(extract_field)
+	validate(validate)
+	retry_or_flag_low_confidence(retry_or_flag_low_confidence)
+	assemble_result(assemble_result)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> classify_contract_type;
+	classify_contract_type --> plan_fields;
+	extract_field --> validate;
+	plan_fields --> retrieve_for_each_field;
+	retrieve_for_each_field --> extract_field;
+	retry_or_flag_low_confidence -. &nbsp;done&nbsp; .-> assemble_result;
+	retry_or_flag_low_confidence -. &nbsp;retry or next&nbsp; .-> retrieve_for_each_field;
+	validate --> retry_or_flag_low_confidence;
+	assemble_result --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
